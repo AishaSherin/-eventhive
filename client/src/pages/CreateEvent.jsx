@@ -1,5 +1,14 @@
+import { useNavigate } from "react-router-dom";
+import CreateEventForm from "../components/CreateEventForm";
+
 function CreateEvent() {
-  return <h1>Create Event</h1>;
+  const navigate = useNavigate();
+
+  return (
+    <div style={{ padding: "var(--space-lg)", maxWidth: 600, margin: "0 auto" }}>
+      <CreateEventForm onSuccess={() => navigate("/dashboard")} />
+    </div>
+  );
 }
 
 export default CreateEvent;
